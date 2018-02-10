@@ -20,7 +20,7 @@ Some of the features the app supports include:
 
 1. Clone the repo.
 
-    `git clone https://github.com/jjeremydiaz/OpenHouse.git`
+    `git clone https://github.com/jaredryan/fishackathon-slc-11.git`
     
 2. Navigate to the OpenHouse folder
 
