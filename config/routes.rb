@@ -60,12 +60,13 @@ Rails.application.routes.draw do
   
   
   get '/', to: 'main#show', as: 'root'
-  get '/search', to: 'main#search', as: 'search'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get 'sessions/new'
   get '/about', to: 'main#about', as: 'about'
   get '/users/edit', to: 'users#edit', as: 'edit_user'
+  get '/report/new', to: 'reports#new', as: 'new_report'
+  get '/report', to: 'reports#create', as: 'reports'
   resources :users, :except => [:edit]
 end
