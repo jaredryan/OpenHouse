@@ -17,7 +17,9 @@
       <%= form_for(:report, url: reports_path) do |f| %>
         <table cellpadding="5">
           <tr>
-            <td> <input type="text" class="form-control" name="dff_keyword" size="30" maxlength="30" placeholder="Lake/River Search"> </td>
+            <td> 
+              <%= text_field_tag :water, nil, class: "form-control" name: "dff_keyword" size: "30" maxlength: "30" placeholder:"Lake/River Search" %>
+            <!--<input type="text" class="form-control" name="dff_keyword" size="30" maxlength="30" placeholder="Lake/River Search"> </td>-->
             <td> <input type="text" class="form-control" name="dff_keyword" size="10" maxlength="5" placeholder="Zip Code"> </td>
             <td> <button type="button" class="btn btn-dark"> Find </button> </td>
           </tr>
