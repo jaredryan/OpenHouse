@@ -4,16 +4,18 @@
 <h1 class="center">Login</h1>
 <br>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="login">
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
+      <br class="mobile-nav"/>
+      <%= f.email_field :email, class: 'form-control email-input' %>
+      <br>
       <%= f.label :password %>
+      <br class="mobile-nav"/>
       <%= f.password_field :password, class: 'form-control' %>
       <br>
-      <%= f.submit "Log In", class: "btn btn-primary" %>
+      <%= f.submit "Log In", class: "btn btn-primary", id: "login-btn" %>
     <% end %>
     <br>
     <p>New user? <%= link_to "Sign up now!", new_user_path %></p>

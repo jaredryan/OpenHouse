@@ -11,6 +11,13 @@ class ReportsController < ApplicationController
     end
 
     def create
+        
+        
+        
+        
+        
+        
+        byebug
         @report = Report.create(report_params)
         redirect_to root_path
     end

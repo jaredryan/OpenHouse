@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Fresh Water Feed</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -15,7 +14,7 @@
     <div class="banner"> </div>
     <div class="subBanner">
     <center> 
-      <form>
+      <%= form_for(:report, url: reports_path) do |f| %>
         <table cellpadding="5">
           <tr>
             <td> <input type="text" class="form-control" name="dff_keyword" size="30" maxlength="30" placeholder="Lake/River Search"> </td>
@@ -66,7 +65,7 @@
         <button class="btn btn-dark" type="reset"> Clear </button> 
         <button class="btn btn-dark"> Submit </button>
         </center>
-      </form>
+      <% end %>
     </div>
 
     <div class="feed">
