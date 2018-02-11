@@ -14,13 +14,9 @@ class MainController < ApplicationController
         @water = params[:water]
         @zip = params[:zip]
         
-    
         # Write code to update page but not refresh with filtered results
         endpoint = "http://www.freshwaterapi.com/api/freshwater/getlakesbyzip/"
         @response = HTTParty.get(endpoint + @zip)
-        
-        byebug
-        
         
         # Below redirect currently refreshes the page
         redirect_to root_path
