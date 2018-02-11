@@ -89,10 +89,10 @@ body{
 }
 
 .banner{
-    margin-top: 100px;
+    margin-top: 60px;
     display: grid;
     background-image: url("banner.jpeg");
-    opacity: .7;
+    /*opacity: .7;*/
     background-position: center;
     height: 300px;
     background-size: cover;

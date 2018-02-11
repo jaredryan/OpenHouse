@@ -69,5 +69,8 @@ Rails.application.routes.draw do
   get '/users/edit', to: 'users#edit', as: 'edit_user'
   get '/reports/new', to: 'reports#new', as: 'new_report'
   post '/reports', to: 'reports#create', as: 'reports'
+  post '/reports/env', to: 'reports#env_create', as: 'env_reports'
+  post '/reports/bio', to: 'reports#bio_create', as: 'bio_reports'
+  post '/reports/soc', to: 'reports#soc_create', as: 'soc_reports'
   resources :users, :except => [:edit]
 end
