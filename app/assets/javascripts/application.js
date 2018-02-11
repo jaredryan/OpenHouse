@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require cloudinary
 //= require tether
 //= require bootstrap
 //= require underscore
-//= require gmaps/google

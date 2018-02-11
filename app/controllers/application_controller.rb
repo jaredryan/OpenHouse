@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   include SearchHelper
-  helper_method :google_map_static_helper
+  require 'httparty'
+  
 
   # MAP HAS NOT YET BEEN FULLY IMPLEMENTED, SO THIS HAS BEEN COMMENTED OUT.
   

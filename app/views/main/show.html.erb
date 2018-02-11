@@ -14,19 +14,19 @@
     <div class="banner"> </div>
     <div class="subBanner">
     <center> 
-      <%= form_for(:report, url: reports_path) do |f| %>
+      <%= form_for(:search, url: search_path) do |f| %>
         <table cellpadding="5">
           <tr>
-            <td> 
-              <%= text_field_tag :water, nil, class: "form-control" name: "dff_keyword" size: "30" maxlength: "30" placeholder:"Lake/River Search" %>
-            <!--<input type="text" class="form-control" name="dff_keyword" size="30" maxlength="30" placeholder="Lake/River Search"> </td>-->
-            <td> <input type="text" class="form-control" name="dff_keyword" size="10" maxlength="5" placeholder="Zip Code"> </td>
-            <td> <button type="button" class="btn btn-dark"> Find </button> </td>
+            <td> <%= text_field_tag :water, nil, class: "form-control", size: "30", maxlength: "30", placeholder:"Lake/River Search" %> </td>
+            <td> <%= text_field_tag :zip, nil, class: "form-control", size: "10", maxlength: "5", placeholder:"Zip Code" %> </td>
+            <td> <button type="submit" class="btn btn-dark"> Find </button> </td>
           </tr>
         </table>
+      <% end %>
   
     </center>
     </div>
+    <%= form_for(:report, url: reports_path) do |f| %>
     <table class="table">
       <thead>
           <tr>
@@ -38,6 +38,7 @@
         <tbody>
           <tr> 
             <td> 
+            <!--radio_button_tag-->
               <input type="radio" name="boatTraffic" value="mild"> mild </input>
               <br /> 
               <input type="radio" name="boatTraffic" value="medium"> medium </input>
@@ -52,11 +53,11 @@
             <input type="radio" name="beachCrowd" value="heavy"> heavy </input>
           </td>
            <td > 
-            <input type="radio" name="boat-ramp" value="mild"> mild </input>
+            <input type="radio" name="boatRamp" value="mild"> mild </input>
             <br />
-            <input type="radio" name="boat-ramp" value="medium"> medium </input>
+            <input type="radio" name="boatRamp" value="medium"> medium </input>
             <br />
-            <input type="radio" name="boat-ramp" value="heavy"> heavy </input>
+            <input type="radio" name="boatRamp" value="heavy"> heavy </input>
           </td>
           </tr>
         </tbody>
@@ -65,10 +66,10 @@
       <div class="bottomBanner">
         <center> 
         <button class="btn btn-dark" type="reset"> Clear </button> 
-        <button class="btn btn-dark"> Submit </button>
+        <button type="submit" class="btn btn-dark"> Submit </button>
         </center>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
 
     <div class="feed">
         <p>You can do anything your heart can imagine. There it is. You don't want to kill all your dark areas they are very important. Let all these little things happen. Don't fight them. Learn to use them.<br><br>

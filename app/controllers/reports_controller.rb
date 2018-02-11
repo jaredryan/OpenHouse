@@ -12,13 +12,16 @@ class ReportsController < ApplicationController
 
     def create
         
+        @boat_traffic = params[:boatTraffic]
+        @beach_crowd = params[:beachCrowd]
+        @boat_ramp = params[:boatRamp]
+        @general = params[:text]
         
         
+        # Put data into database
         
-        
-        
-        byebug
-        @report = Report.create(report_params)
+    
+        # @report = Report.create(params)
         redirect_to root_path
     end
 end

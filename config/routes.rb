@@ -65,6 +65,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get 'sessions/new'
   get '/about', to: 'main#about', as: 'about'
+  post '/search', to: 'main#search', as: 'search'
   get '/users/edit', to: 'users#edit', as: 'edit_user'
   get '/reports/new', to: 'reports#new', as: 'new_report'
   post '/reports', to: 'reports#create', as: 'reports'

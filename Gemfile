@@ -33,8 +33,12 @@ gem 'rails-assets-tether'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# For HTTP Requests
+gem 'httparty'
+gem 'json'
+
 # For google maps integration
-gem 'gmaps4rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -46,25 +50,11 @@ gem 'geocoder'
 
 gem 'rails_12factor', group: :production
 
-# for cloudinary storage
-gem 'carrierwave'
-gem 'cloudinary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'jasmine-rails'
-end
-
-group :test do
-  gem 'rspec-rails'
-  gem 'simplecov', :require => false
-  gem 'cucumber-rails', require: false
-  gem 'cucumber-rails-training-wheels'
-  gem 'database_cleaner'
-  gem 'autotest-rails'
-  gem 'factory_girl_rails'
-  gem 'metric_fu'
 end
 
 group :development do

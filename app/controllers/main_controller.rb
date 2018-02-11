@@ -3,29 +3,28 @@ class MainController < ApplicationController
         @user = current_user
     end
     
+    def search_params
+        params.require(:search).permit(:water, :zip)
+    end
+    
     def show
     end
     
-    # def search
+    def search
+        @water = params[:water]
+        @zip = params[:zip]
+        
     
-    #     @full_location = params[:location][:search]
-    #     @all_users = User.where(:searchable => true)
+        # Write code to update page but not refresh with filtered results
+        endpoint = "http://www.freshwaterapi.com/api/freshwater/getlakesbyzip/"
+        @response = HTTParty.get(endpoint + @zip)
         
-    #     @success = googleSearch
-    #     if @success == false
-    #         flash[:alert] = "Your location does not exist, so check out Oakland instead :)"
-    #     end
+        byebug
         
-    #     #Populate array of nearby homes to populate the map
-    #     @nearby_locations = []
-    #     @users = []
         
-    #     @nearby = populateMap()
-    #     if @nearby == false
-    #         flash[:alert] = "No spaces were found nearby. Zoom out with the map to find the closest spaces. If you want to learn more about those spaces, perform a new search on that city."
-    #     end
-        
-    # end
+        # Below redirect currently refreshes the page
+        redirect_to root_path
+    end
 
     
     def about
