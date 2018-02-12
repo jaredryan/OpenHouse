@@ -18,32 +18,64 @@
     <%= form_for(:report, url: env_reports_path) do |f| %>
     
     <div class="container">
-        <div id="environmentalconditions">
-            <h3>Environmental Conditions</h3>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div id="env1" class="col-md-3">
-                <input type="checkbox" name="algaeBlooms"> Algae Blooms</input><br>
-                <input class="bT1" type="checkbox" name="surfaceScum" value="present"> Surface Scum</input><br>
-                <input class="bT1" type="checkbox" name="garbageBuildup" value="present"> Garbage Buildup</input><br>
-            </div>
+        	<form class="form-horizontal">
+<fieldset>
 
-            <div id="env2" class="col-md-3">
-                <input class="bT1" type="checkbox" name="visiblePolutants" value="present"> Visibile Polutants</input><br>
-                <input class="bT1" type="checkbox" name="sulferSmells" value="present"> Sulfer Based Smells</input><br>
-                <input class="bT1" type="checkbox" name="otherSmells" value="present"> Other Smells</input>
-            </div>
-        </div>
-        <br>
-        <div class="col-md-3"></div>
-        <div class="col-md-3 col-md-offset-2">
+<!-- Form Name -->
+<legend>Environmental Conditions</legend>
+</div>
+<br>
+<div class="container">
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="env">Water Quality</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="algaeblooms">
+      <input type="checkbox" name="algaeblooms" id="algaeblooms" value="1">
+      Algae Blooms
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="surfacescum">
+      <input type="checkbox" name="surfacescum" id="surfacescum" value="2">
+      Surface Scum
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="garbageBuildup">
+      <input type="checkbox" name="garbageBuildup" id="garbageBuildup" value="3">
+      Garbage Buildup
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="visiblePollutants">
+      <input type="checkbox" name="visiblePollutants" id="visiblePollutants" value="4">
+      Visible Pollutants
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="sulfurSmells">
+      <input type="checkbox" name="sulfurSmells" id="sulfurSmells" value="5">
+      Sulfur Based Smells
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="otherSmells">
+      <input type="checkbox" name="otherSmells" id="otherSmells" value="6">
+      Other Smells
+    </label>
+	</div>
+  </div>
+</div>
+    </div>
+
+    <div id="middleButtons" class="container">
+        <div class="text-center">
             <button class="" id="submitButton" type="submit">Submit</button>
             <button class="" id="Clear" type="submit">Clear Form</button>
         </div>
     </div>
-    
     <% end %>
     
     <%= form_for(:report, url: bio_reports_path) do |f| %>
@@ -51,244 +83,274 @@
     <br>
     
     <div class="container">
-        <div id="biologicalconditions">
-            <h3>Biological Conditions</h3>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class "col-md-3">
-                <div class="text">
-                    <label>Water Temp:
-                <input class="text"></input></label>
-                    <label id="windSpeed" class="text windSpeed">Wind Speed:
-                      <input class="wS1" type="text" name="windSpeed" value=""></input>
-                    </label>
-                </div>
-            </div>
-        </div>
+        <form class="form-horizontal">
+<fieldset>
 
-        <br>
-
-        <div class="container">
-            <div id="goon" class="row">
-                <div class="col-md-2"></div>
-                <div class="radio radio-inline col-md-3">
-                    <input class="radio wA1" type="radio" name="waveAction" value="Calm"> Calm waves</input>
-                </div>
-                <div class="radio radio-inline col-md-3">
-                    <input class="radio wA2" type="radio" name="waveAction" value="Choppy"> Choppy waves</input>
-                </div>
-                <div class="radio radio-inline col-md-3">
-                    <input class="radio wA3" type="radio" name="waveAction" value="Hazardous"> Hazardous waves</input>
-                </div>
-            </div>
-        </div>
-        
-        <br>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class "col-md-3">
-                    <div class="text">
-                        <label>pH Value:
-                  <input class="text"></input></label>
-                        <label id="iceThickness" class="text iceThickness">Ice Thickness:
-                    <input class="wS1" type="text" name="iceThickness" value=""></input>
-                  </label>
-                    </div>
-                </div>
-            </div>
-            <br>
-
-            <div class="container">
-                <div id="goon" class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-2">
-
-                        <div class='radio'>
-                            <input id="crazy" class="radio" type="radio" name="iceQuality"> <span>ice: Poor</span></input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="iceQuality"> Ice: Normal</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="iceQuality"> Ice: Excellent</input>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="rampQuality"> Ramp: Poor</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="rampQuality"> Ramp: Normal</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="rampQuality"> Ramp: Excellent</input>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="docksQuality"> Docks: Open</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="docksQuality"> Docks: Closed</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="docksQuality"> Docks: Absent</input>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="bathroom"> Bath: Open</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="bathroom"> Bath: Closed</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="bathroom"> Bath: Absent</input>
-                        </div>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div>
-            </div>
-            <br>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-6">
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="fishKill"> Fish Kill</input>
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="fishDisease"> Fish Disease</input>
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="invasive"> Invasive Species</input>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-3">
-                        <!--<form action="upload.php" method="post" enctype="multipart/form-data">-->
-                        <!--    Select image to upload:-->
-                        <!--    <input type="file" name="fileToUpload" id="fileToUpload">-->
-                        <!--    <input type="submit" value="Upload Image" name="submit">-->
-                            <button class="" type="submit">Submit</button>
-                            <button class="" type="submit">Clear Form</button>
-                        <!--</form>-->
-                        
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+<!-- Form Name -->
+<legend>Biological Conditions</legend>
+<br>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="windSpeed">Wind Speed</label>  
+  <div class="col-md-2">
+  <input id="windSpeed" name="windSpeed" type="text" placeholder="66° F" class="form-control input-md">
     
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="waveAction">Wave Action</label>
+  <div class="col-md-4">
+    <select id="waveAction" name="waveAction" class="form-control">
+      <option value="1">Calm</option>
+      <option value="2">Choppy</option>
+      <option value="3">Hazardous</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="watertemp">Water Temperature</label>  
+  <div class="col-md-2">
+  <input id="watertemp" name="watertemp" type="text" placeholder="66° F" class="form-control input-md">
+    
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="pHBalance">pH Balance</label>  
+  <div class="col-md-2">
+  <input id="pHBalance" name="pHBalance" type="text" placeholder="7.7 pH" class="form-control input-md">
+    
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="iceThickness">Ice Thickness</label>  
+  <div class="col-md-4">
+  <input id="iceThickness" name="iceThickness" type="text" placeholder="3 inches" class="form-control input-md">
+    
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="iceQuality">Ice Quality</label>
+  <div class="col-md-4">
+    <select id="iceQuality" name="iceQuality" class="form-control">
+      <option value="1">Poor</option>
+      <option value="2">Normal</option>
+      <option value="3">Excellent</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Fishtypes">Fish</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="Fishtypes-0">
+      <input type="checkbox" name="Fishtypes" id="Fishtypes-0" value="1">
+      Fish Kill
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="Fishtypes-1">
+      <input type="checkbox" name="Fishtypes" id="Fishtypes-1" value="2">
+      Fish Disease
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="Fishtypes-2">
+      <input type="checkbox" name="Fishtypes" id="Fishtypes-2" value="3">
+      Invasive Species
+    </label>
+	</div>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="imageUpload">Upload Image</label>
+  <div class="col-md-4">
+    <input id="imageUpload" name="imageUpload" class="input-file" type="file">
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div>
+
+            <br>
+
+            <div class="container">
+                <div class="text-center">
+                    <button class="" type="submit">Submit</button>
+                    <button class="" type="submit">Clear Form</button>
+                        <!--</form>-->
+                </div>
+            </div>
+    <br>
     <% end %>
     
 
-    <!-- Don't mess with code above this line! -->
     
     <%= form_for(:report, url: soc_reports_path) do |f| %>
     
     <div class="container">
-        <div id="socialconditions">
-            <h3>Social Conditions</h3>
-        </div>
-        <div class "col-lg-4">
-            <label>Number of People: 
-              <input type="text" name="noOfPeople" placeholder="Enter a number"></input>
-            </label>
+         <form class="form-horizontal">
+<fieldset>
 
-            <label>Number of Boats: 
-              <input type="text" name="windSpeed" value=""></input>
-            </label>
+<!-- Form Name -->
+<legend>Social Conditions</legend>
+</div>
+<br>
+<div class="container">
+<!-- Select Basic -->
+<div class="form-group">
+  <label id="latrine" class="col-md-4 control-label" for="bathrooms">Bathrooms</label>
+  <div class="col-md-4">
+    <select id="bathrooms" name="bathrooms" class="form-control">
+      <option value="1">Open</option>
+      <option value="2">Closed</option>
+      <option value="3">Absent</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="rampQuality">Ramp Quality</label>
+  <div class="col-md-4">
+    <select id="rampQuality" name="rampQuality" class="form-control" multiple="multiple">
+      <option value="1">Poor</option>
+      <option value="2">Normal</option>
+      <option value="3">Excellent</option>
+      <option value="4">In Need of Repair</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="rampTraffic">Ramp Traffic</label>
+  <div class="col-md-4">
+    <select id="rampTraffic" name="rampTraffic" class="form-control">
+      <option value="1">Light</option>
+      <option value="2">Medium</option>
+      <option value="3">Heavy</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="dockQuality">Docks</label>
+  <div class="col-md-4">
+    <select id="dockQuality" name="dockQuality" class="form-control" multiple="multiple">
+      <option value="1">Poor</option>
+      <option value="2">Normal</option>
+      <option value="3">Excellent</option>
+      <option value="4">In Need of Repair</option>
+      <option value="5">Crowded</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="noOfBoats">Number of Boats</label>  
+  <div class="col-md-4">
+  <input id="noOfBoats" name="noOfBoats" type="text" placeholder="Educated Guess" class="form-control input-md">
+    
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="boatTraffic">Boat Traffic</label>
+  <div class="col-md-4">
+    <select id="boatTraffic" name="boatTraffic" class="form-control">
+      <option value="1">Light</option>
+      <option value="2">Medium</option>
+      <option value="3">Heavy</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="noOfPeople">Number of People</label>  
+  <div class="col-md-4">
+  <input id="noOfPeople" name="noOfPeople" type="text" placeholder="Educated Guess" class="form-control input-md">
+    
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="beachCrowd">Beach Crowd</label>
+  <div class="col-md-4">
+    <select id="beachCrowd" name="beachCrowd" class="form-control">
+      <option value="1">Light</option>
+      <option value="2">Medium</option>
+      <option value="3">Heavy</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="badCompany">Bad/Illegal Activities</label>
+  <div class="col-md-4">
+    <select id="badCompany" name="badCompany" class="form-control" multiple="multiple">
+      <option value="1">Poaching</option>
+      <option value="2">Bad Boating Behavior</option>
+      <option value="3">Illegal Activities</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="container">
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="summaryText">Summary Text</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="summaryText" name="summaryText">Additional details here</textarea>
+  </div>
+</div>
+</fieldset>
+</form>
 
-            <div class="container">
-                <div id="goon" class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-2">
-                        <label>Boat Traffic: </label>
-                        <div class='radio'>
-                            <input class="radio" type="radio" name="boatTraffic" value="light "></input>Light
-                        </div>
-                        <div class='radio'>
-                            <input class="radio bTA2 " type="radio" name="boatTraffic" value="medium "> Medium</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio bTA3 " type="radio" name="boatTraffic" value="heavy "> Heavy</input>
-                        </div>
-                    </div>
-
-
-
-                    <div class='col-md-2'>
-                        <label class="beachCrowd ">Beach Crowd: </label>
-                        <div class='radio'>
-                            <input class="radio bC1 " type="radio" name="beachCrowd " value="light "> Light</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio bC2 " type="radio" name="beachCrowd " value="medium "> Medium</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio bC3 " type="radio" name="beachCrowd " value="heavy "> Heavy</input>
-                        </div>
-                    </div>
-
-
-                    <div class='col-md-2'>
-                        <label class="boatRTraffic ">Boat Ramp Traffic: </label>
-                        <div class='radio'>
-                            <input class="radio bRT1 " type="radio" name="boatRTraffic " value="light "> Light</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio bRT2 " type="radio" name="boatRTraffic " value="medium "> Medium</input>
-                        </div>
-                        <div class='radio'>
-                            <input class="radio bRT3 " type="radio" name="boatRTraffic " value="heavy "> Heavy</input>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-6">
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="poaching " value="present "> Poaching</input>
-                        </label>
-                        <label class="checkbox-inline">
-                          <input type="checkbox" name="illegalActivities " value="present "> Illegal Activities</input>
-                        </label>
-                        <label class="checkbox-inline">
-                          <input type="checkbox" name="badBehaviour " value="present "> Bad Boating Behaviour</input>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3 col-md-offset-2">
-                <button class="" id="submitButton" type="submit">Submit</button>
-                <button class="" id="Clear" type="submit">Clear Form</button>
-            </div>
-        </div>
-
-      </div>
     </div>
+            <div class="container">
+                <div class="text-center">
+                    <button class="" type="submit">Submit</button>
+                    <button class="" type="submit">Clear Form</button>
+                        <!--</form>-->
+                </div>
+            </div>
     
     <% end %>
     
