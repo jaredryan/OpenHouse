@@ -38,6 +38,46 @@ Some of the features the app supports include:
 
     `bundle install`
 
+6. Start the Postgres SQL server
+    
+    `sudo service postgresql restart`
+    OR (depends on your setup)
+    `pg_ctl -D /usr/local/var/postgres start`
+
+7. Set up the database
+
+    `rake db:setup`
+    
+    The following error is common while setting up the database. It concerns an encoding problem with the database:
+    
+    `Called from /usr/local/rvm/gems/ruby-2.3.5/gems/activesupport-4.2.9/lib/active_support/dependencies.rb:240:in 'load_dependency'
+    PG::InvalidParameterValue: ERROR:  new encoding (UTF-8) is incompatible with the encoding of the template database (SQL_ASCII)`
+    
+    If this error occurs, go to OpenHouse -> config -> database.yml, and change the encoding in line 3 to match your database template.
+    In the case of the above example, we would change it from the incompatible UTF-8 to SQL_ASCII.
+    
+    Replace `encoding: UTF-8` with `encoding: SQL_ASCII`
+
+8. Run the app
+
+    `sudo screen -d -m rails s`
+    OR (depends on your setup)
+    `rails server`
+
+9. Access the app via your web browser (localhost:3000 or whatever your Cloud9 port and ip are).
+
+Note: 
+* During application development, postgresql needs to be reset often. When the following error appears:
+    `Called from /usr/local/rvm/gems/ruby-2.3.5/gems/activesupport-4.2.9/lib/active_support/dependencies.rb:240:in 'load_dependency'
+could not connect to server: Connection refused
+        Is the server running locally and accepting
+        connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?`
+    
+    When this happens, run the following command to solve this problem:
+    `sudo service postgresql restart`
+* To reset the database if it is giving you issues, run
+    `rake db:reset`. In postgresql, this will drop the previous tables, create the required tables, and run all migrations for you as well. If you run `rails server` or an equivalent command right resetting the database, it should work.
+
 ### Shutdown
 
 To stop the server, go into the screen and kill it
@@ -50,6 +90,8 @@ To stop the server, go into the screen and kill it
 
 ## Helpful Links
 [Heroku App][1]
+
+Domain: [freshwaterfeed.us]
 
 ## Future Tasks
 
