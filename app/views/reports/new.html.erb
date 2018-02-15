@@ -11,7 +11,7 @@
 <body>
 
     <div class="container">
-        <div class="jumbotron"></div>
+        <div class="jumbotron" id="no-border"></div>
     </div>
 
     <%= form_for(:report, url: env_reports_path) do |f| %>
@@ -102,7 +102,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="waveAction">Wave Action</label>
   <div class="col-md-4">
-    <select id="waveAction" name="waveAction" class="form-control">
+    <select id="waveAction min-height" name="waveAction" class="form-control" style="height: 34px">
       <option value="1">Calm</option>
       <option value="2">Choppy</option>
       <option value="3">Hazardous</option>
@@ -145,7 +145,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="iceQuality">Ice Quality</label>
   <div class="col-md-4">
-    <select id="iceQuality" name="iceQuality" class="form-control">
+    <select id="iceQuality" name="iceQuality" class="form-control" style="height: 34px">
       <option value="1">Poor</option>
       <option value="2">Normal</option>
       <option value="3">Excellent</option>
@@ -222,7 +222,7 @@
 <div class="form-group">
   <label id="latrine" class="col-md-4 control-label" for="bathrooms">Bathrooms</label>
   <div class="col-md-4">
-    <select id="bathrooms" name="bathrooms" class="form-control">
+    <select id="bathrooms" name="bathrooms" class="form-control" style="height: 34px">
       <option value="1">Open</option>
       <option value="2">Closed</option>
       <option value="3">Absent</option>
@@ -249,7 +249,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="rampTraffic">Ramp Traffic</label>
   <div class="col-md-4">
-    <select id="rampTraffic" name="rampTraffic" class="form-control">
+    <select id="rampTraffic" name="rampTraffic" class="form-control" style="height: 34px">
       <option value="1">Light</option>
       <option value="2">Medium</option>
       <option value="3">Heavy</option>
@@ -287,7 +287,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="boatTraffic">Boat Traffic</label>
   <div class="col-md-4">
-    <select id="boatTraffic" name="boatTraffic" class="form-control">
+    <select id="boatTraffic" name="boatTraffic" class="form-control" style="height: 34px">
       <option value="1">Light</option>
       <option value="2">Medium</option>
       <option value="3">Heavy</option>
@@ -310,7 +310,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="beachCrowd">Beach Crowd</label>
   <div class="col-md-4">
-    <select id="beachCrowd" name="beachCrowd" class="form-control">
+    <select id="beachCrowd" name="beachCrowd" class="form-control" style="height: 34px">
       <option value="1">Light</option>
       <option value="2">Medium</option>
       <option value="3">Heavy</option>

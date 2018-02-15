@@ -11,6 +11,7 @@ body {
 
 #colorFish {
     background-image: url("about.png");
+    border-radius: 0px;
 }
 
 h2, h5 {

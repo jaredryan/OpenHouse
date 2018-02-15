@@ -5,6 +5,10 @@
     margin-top: 60px;
 }
 
+#no-border {
+    border-radius: 0px;
+}
+
 legend {
     background: #43BAB6;
     height: 38px;
