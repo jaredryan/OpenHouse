@@ -10,6 +10,9 @@
 <body>
     <div class="container">
     <div class="banner"> </div>
+    <% if flash[:notice] %>
+			<h6 id="flash"><%= flash[:notice]%></h6>
+		<% end %>
     <div class="subBanner">
     <center> 
       <%= form_for(:search, url: search_path) do |f| %>

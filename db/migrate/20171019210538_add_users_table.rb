@@ -4,6 +4,7 @@ class AddUsersTable < ActiveRecord::Migration
             u.string :email
             u.string :password
             u.string :username
+            u.string :password_digest
             u.string :reports, default: [], array: true
         end
     end

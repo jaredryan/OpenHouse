@@ -174,12 +174,19 @@ nav ul li {
 
 nav ul a:hover {
 	text-decoration: underline;
-	font-size: 22px;
 	color: rgb(0, 30, 100);
 }
 
 .mobile-nav {
 	display: none;
+}
+
+#flash {
+	  text-align: center;
+	  padding: 0px;
+	  margin: auto;
+	  margin-top: 10px;
+	  margin-bottom: -8px;
 }
 
 @media only screen and (max-width: 650px) {
@@ -188,10 +195,6 @@ nav ul a:hover {
 	  top: -2px;
 		font-size: 15px;
 		margin-top: 4px;
-	}
-	
-	nav ul a:hover {
-		font-size: 17px;
 	}
 	
 	.mobile-nav {
@@ -216,6 +219,16 @@ nav ul a:hover {
 	/*.create {*/
 	/*	width: 100%;*/
 	/*}*/
+}
+
+@media only screen and (max-width: 400px) {
+    nav ul {
+	    margin-left: -30px;
+    }
+    
+    #topbar-logo {
+      padding-right: 20px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {

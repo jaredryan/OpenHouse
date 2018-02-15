@@ -10,8 +10,6 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         next_path = new_user_path
         if @user.errors.empty?
-            path = Rails.root.join('app', 'assets', 'images', 'user_images', @user.email)
-            Dir.mkdir path unless File.exists? path
             next_path = root_path
             log_in @user
             flash[:notice] = "#{@user.email} was successfully created."
@@ -36,7 +34,7 @@ class UsersController < ApplicationController
         @user.update_attributes(user_params)
         @user.save!
         flash[:notice] = "Your account has been updated."
-        redirect_to user_path(@user)
+        redirect_to root_path
     end
     
     def destroy

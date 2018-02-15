@@ -8,7 +8,7 @@
       %br
       = label :user, :email, 'Email'
       %br.mobile-nav
-      = text_field :user, 'email', class: 'form-control email-input'
+      = text_field :user, 'email', class: 'form-control email-input', value: flash[:email]
       %br
       = label :user, :password, 'Password'
       %br.mobile-nav

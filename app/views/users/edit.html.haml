@@ -1,23 +1,22 @@
-%html
-  %body
-    %div.hosting-box
-      %p= flash[:notice] if flash[:notice]
-      %h1.center Edit Profile Information
-      <br>
-      %h4.center Edit any of the fields below.
-  
-      = form_tag user_path(@user), :method => :patch do
-        <br>
-        %h4 Personal Information
-        = label :user, :email, 'E-mail Address'
-        = @user.email
-        <br>
-        = label :user, :username, 'First Name'
-        = text_field :user, 'first_name', :value => @user.first_name
-        <br>
-        = submit_tag 'Save Changes'
+%div.signup-box
+  %p.center= flash[:notice] if flash[:notice]
+  %h1.center.create Edit Your Account
+  %h3.center.create Edit any of your account information below.
+  <br>
+  %div{:class => 'login'}
+    = form_tag user_path(@user), :method => :patch do
+      
+      = label :user, :email, 'Email Address: '
+      %br.mobile-nav
+      = @user.email
+      %br
+      = label :user, :username, 'Username'
+      %br.mobile-nav
+      = text_field :user, 'username', class: 'form-control username', :value => @user.username
+      %br
+      = submit_tag 'Save Changes', class: 'btn btn-dark btn-center', id: "login-btn"
    
-      <br>
-      = button_to 'Delete Profile', user_path(@user), :method => :delete, :confirm => "Are you sure?"
-      <br>
-      = link_to "Back to Main Page", root_path
+    <br>
+    = button_to 'Delete Profile', user_path(@user), :method => :delete, :confirm => "Are you sure?", class: 'btn btn-dark btn-center', id: "login-btn" 
+    
+      
