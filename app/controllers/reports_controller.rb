@@ -29,10 +29,10 @@ class ReportsController < ApplicationController
         
        # Good
         
-        @boat_traffic = params[:boatTraffic]
-        @beach_crowd = params[:beachCrowd]
-        @boat_ramp = params[:boatRamp]
-        @general = params[:text]
+        # @boat_traffic = params[:boatTraffic]
+        # @beach_crowd = params[:beachCrowd]
+        # @boat_ramp = params[:boatRamp]
+        # @general = params[:text]
         
         
         # Put data into database
@@ -63,10 +63,10 @@ class ReportsController < ApplicationController
         
         # Good
         
-        @boat_traffic = params[:boatTraffic]
-        @beach_crowd = params[:beachCrowd]
-        @boat_ramp = params[:boatRamp]
-        @general = params[:text]
+        # @boat_traffic = params[:boatTraffic]
+        # @beach_crowd = params[:beachCrowd]
+        # @boat_ramp = params[:boatRamp]
+        # @general = params[:text]
         
         
         # Put data into database
