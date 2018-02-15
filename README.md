@@ -91,7 +91,7 @@ To stop the server, go into the screen and kill it
 ## Helpful Links
 [Heroku App][1]
 
-Domain: [freshwaterfeed.us](freshwaterfeed.us)
+Domains: freshwaterfeed.us or https://freshwaterfeed.herokuapp.com/
 
 ## Future Tasks
 
