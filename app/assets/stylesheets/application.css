@@ -13,4 +13,6 @@
  *= require_tree .
  *= require_self
  *= require bootstrap.css
+ *= require about.css
+ *= require form.css
  */

@@ -1,5 +1,6 @@
 * {
   font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
 }
 
 #openhouse-navbar {
@@ -7,13 +8,16 @@
 }
 
 #topbar-logo {
-  width: 130px;
   vertical-align: middle;
   margin-left: 20px;
-  padding-right: 20px;
+  padding-right: 40px;
   border-right: 1px solid #343a40;
   position: absolute;
 	top: 7px;
+}
+
+#topbar-logo img {
+  width: 110px;
 }
 
 #topbar-logo:hover {
@@ -21,41 +25,51 @@
   text-decoration: none;
 }
 
-.hosting-box, .edit-box, .about, .login-box, .signup-box {
+.hosting-box, .edit-box, .login-box, .signup-box {
   padding: 50px;
   width: 650px;
   margin: auto;
   color: #6e6e6e;
   margin-top: 70px;
+  color: rgb(60,60,60);
 }
 
-.login {
-  font-size: 18px;
+.about {
+  padding: 50px;
+  width: 1000px;
+  margin: auto;
+  color: #6e6e6e;
+  margin-top: -50px;
+  color: rgb(60,60,60);
 }
 
-.login input {
-  width: 300px; 
-}
+/*.login {*/
+/*  font-size: 18px;*/
+/*}*/
 
-#login-btn {
-  width: 100px;
-  font-size: 20px;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 20px;
-}
+/*.login input {*/
+/*  width: 300px; */
+/*}*/
 
-.username {
-  margin-left: 39px;
-}
+/*#login-btn {*/
+/*  width: 100px;*/
+/*  font-size: 20px;*/
+/*  border-radius: 5px;*/
+/*  text-align: center;*/
+/*  margin-top: 20px;*/
+/*}*/
 
-.password {
-  margin-left: 46px;
-}
+/*.username {*/
+/*  margin-left: 39px;*/
+/*}*/
 
-.email-input {
-  margin-left: 34px;
-}
+/*.password {*/
+/*  margin-left: 46px;*/
+/*}*/
+
+/*.email-input {*/
+/*  margin-left: 34px;*/
+/*}*/
 
 .login-header, .logout-box, .signup-header, .signup-subheader, .edit-header, .edit-subheader, .show-header, .show-subheader {
   text-align: center;
@@ -69,13 +83,6 @@
   text-align: justify
 }
 
-.homepage-box {
-  width: 650px;
-  padding: 50px;
-  margin: auto;
-  color: #6e6e6e;
-}
-
 #homepage-header-1 {
   color: #2FB2C2;
 }
@@ -84,11 +91,11 @@
   font-weight: 300;
 }
 
-body{
+body {
     background-color: white;
 }
 
-.banner{
+.banner {
     margin-top: 60px;
     display: grid;
     background-image: url("banner.jpeg");
@@ -105,8 +112,15 @@ body{
     color: white;
     background-color: #43BAB6;
     margin-top: 20px;
-    padding:10px;
+    padding: 10px;
 }
+
+#login-btn {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
 .bottomBanner{
     height: 60px;
     color: white;
@@ -133,7 +147,7 @@ nav {
 
 nav ul {
   left: 200px;
-  top: 5px;
+  top: 2px;
 	position: absolute;
 	display: inline-block;
 	font-size: 20px;
@@ -143,6 +157,7 @@ nav ul {
 	margin-right: 10px;
 	margin-left: 10px;
 	padding: 0px;
+	height: 36px;
 }
 
 nav ul a {
@@ -160,6 +175,7 @@ nav ul li {
 nav ul a:hover {
 	text-decoration: underline;
 	font-size: 22px;
+	color: rgb(0, 30, 100);
 }
 
 .mobile-nav {
@@ -171,10 +187,10 @@ nav ul a:hover {
 	  left: 200px;
 	  top: -2px;
 		font-size: 15px;
+		margin-top: 4px;
 	}
 	
 	nav ul a:hover {
-		text-decoration: underline;
 		font-size: 17px;
 	}
 	
@@ -182,22 +198,41 @@ nav ul a:hover {
 		display: block;
 	}
 
-	.hosting-box, .edit-box, .about, .login, .login-box, .signup-box {
-	  width: 100%;
-	}
+	/*.hosting-box, .edit-box, .about, .login, .login-box, .signup-box {*/
+	/*  width: 100%;*/
+	/*}*/
 	
-	.login-box, .signup-box, .login {
-		margin-left: 10px;
-		margin-right: 10px;
-		padding: 10px;
-	}
+	/*.login-box, .signup-box, .login {*/
+	/*	margin-left: 10px;*/
+	/*	margin-right: 10px;*/
+	/*	padding: 10px;*/
+	/*}*/
 	
-	.username, .password, .email-input {
-	  margin-left: 0px;
-	  width: 100%;
-	}
+	/*.username, .password, .email-input {*/
+	/*  margin-left: 0px;*/
+	/*  width: 100%;*/
+	/*}*/
 	
-	.create {
-		width: 100%;
-	}
+	/*.create {*/
+	/*	width: 100%;*/
+	/*}*/
 }
+
+@media only screen and (max-width: 1000px) {
+    .about {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .signup-box {
+        width: 90%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
