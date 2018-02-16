@@ -163,17 +163,27 @@ body {
     padding-bottom: 5px;
     position: relative;
     color: rgb(12, 124, 232);
+    font-size: 0px;
 }
 
 .post #info {
-    margin-bottom: 0px;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: left;
+    width: 70%;
+    margin-right: 5%;
+    margin-left: 0;
+    font-size: 1.25rem;
 }
 
 .post #username {
-    position: absolute;
-    right: 0px;
-    top: 5px;
-    margin-bottom: 0px;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 25%;
+    text-align: right;
+    font-size: 1.25rem;
 }
 
 .post #comment {
@@ -296,3 +306,21 @@ nav ul a:hover {
     }
 }
 
+@media only screen and (max-width: 550px) {
+  .post #info {
+      display: block;
+      margin-bottom: 5px;
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+  }
+  
+  .post #username {
+      display: block;
+      margin-bottom: 5px;
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+      text-align: left;
+  }
+}
