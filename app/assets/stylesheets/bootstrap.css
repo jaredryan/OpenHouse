@@ -246,6 +246,10 @@ nav ul a:hover {
 	  margin-bottom: -8px;
 }
 
+table th, table td {
+  width: 33.33%;
+}
+
 @media only screen and (max-width: 650px) {
 	nav ul {
 	  left: 200px;
@@ -257,25 +261,6 @@ nav ul a:hover {
 	.mobile-nav {
 		display: block;
 	}
-
-	/*.hosting-box, .edit-box, .about, .login, .login-box, .signup-box {*/
-	/*  width: 100%;*/
-	/*}*/
-	
-	/*.login-box, .signup-box, .login {*/
-	/*	margin-left: 10px;*/
-	/*	margin-right: 10px;*/
-	/*	padding: 10px;*/
-	/*}*/
-	
-	/*.username, .password, .email-input {*/
-	/*  margin-left: 0px;*/
-	/*  width: 100%;*/
-	/*}*/
-	
-	/*.create {*/
-	/*	width: 100%;*/
-	/*}*/
 }
 
 @media only screen and (max-width: 400px) {
