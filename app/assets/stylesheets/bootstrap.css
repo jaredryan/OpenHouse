@@ -133,6 +133,53 @@ body {
     padding: 2%;
 }
 
+.liveFeed {
+    padding: 2%;
+    border-top: 2px solid #343a40;
+    height: auto;
+    /*width: 500px;*/
+    /*padding: 40px;*/
+}
+
+#searchHeader {
+    margin-top: 30px;
+    border-bottom: 1px dashed #343a40;
+}
+
+.listOfPosts div {
+    /*background-color: rgba(145, 213, 208, .2);*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(145, 213, 208, .08);
+}
+
+.post #title {
+    background-color: rgba(12, 200, 255, 0.13);
+    overflow: auto;
+    clear: both;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    color: rgb(12, 124, 232);
+}
+
+.post #info {
+    margin-bottom: 0px;
+}
+
+.post #username {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    margin-bottom: 0px;
+}
+
+.post #comment {
+    margin-top: 0px;
+}
+
 nav {
 	width: 100%;
 	position: fixed;
