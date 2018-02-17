@@ -68,6 +68,8 @@ Rails.application.routes.draw do
   post '/search', to: 'main#search', as: 'search'
   get '/users/edit', to: 'users#edit', as: 'edit_user'
   get '/reports/new', to: 'reports#new', as: 'new_report'
+  get '/reports/open', to: 'reports#open', as: 'open_report'
+  get '/reports/close', to: 'reports#close', as: 'close_report'
   post '/reports', to: 'reports#create', as: 'reports'
   post '/reports/env', to: 'reports#env_create', as: 'env_reports'
   post '/reports/bio', to: 'reports#bio_create', as: 'bio_reports'

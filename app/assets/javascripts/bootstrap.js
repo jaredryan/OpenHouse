@@ -16,6 +16,11 @@ if (typeof jQuery === 'undefined') {
   }
 }(jQuery);
 
+document.getElementById("openForm").addEventListener("click", function(e) {
+  document.getElementById("formBanner").style.display = "none";
+  document.getElementById("generalForm").style.display = "block";
+});
+
 /* ========================================================================
  * Bootstrap: transition.js v3.3.7
  * http://getbootstrap.com/javascript/#transitions

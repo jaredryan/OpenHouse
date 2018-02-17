@@ -110,9 +110,11 @@ body {
 .subBanner{
     height: 75px;
     color: white;
-    background-color: #43BAB6;
+    background-color: rgb(140, 210, 255);
     margin-top: 20px;
     padding: 10px;
+    border-top: 1px solid #343a40;
+    border-bottom: 1px solid #343a40;
 }
 
 #login-btn {
@@ -124,9 +126,10 @@ body {
 .bottomBanner{
     height: 60px;
     color: white;
-    background-color: #43BAB6;
+    background-color: rgb(140, 210, 255);
     margin-top: 20px;
     padding:10px;
+    border-bottom: 1px solid #343a40;
 }
 
 .feed {
@@ -135,10 +138,28 @@ body {
 
 .liveFeed {
     padding: 2%;
-    border-top: 2px solid #343a40;
     height: auto;
+    clear: both;
     /*width: 500px;*/
     /*padding: 40px;*/
+}
+
+.formBanner {
+    clear: both;
+    height: 64px;
+    color: white;
+    background-color: rgb(140, 210, 255);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    padding-top: 12px;
+    border-top: 1px solid #343a40;
+    border-bottom: 1px solid #343a40;
+}
+
+#openForm {
+    margin: auto;
+    text-align: center;
 }
 
 #searchHeader {
@@ -150,11 +171,12 @@ body {
     /*background-color: rgba(145, 213, 208, .2);*/
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgba(145, 213, 208, .08);
+    background-color: rgba(145, 213, 208, .15);
 }
 
 .post #title {
-    background-color: rgba(12, 200, 255, 0.13);
+    background-color: rgba(12, 200, 255, 0.16);
+    border-bottom: 0.5px solid rgba(145, 213, 208, .8);
     overflow: auto;
     clear: both;
     margin-top: 0px;
@@ -195,7 +217,7 @@ nav {
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	background-color: #43BAB6;
+	background-color: rgb(140, 210, 255);
 	height: 60px;
 	border-bottom: 2px solid #343a40;
 	color: #343a40;

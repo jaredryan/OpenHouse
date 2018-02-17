@@ -10,9 +10,11 @@
 }
 
 legend {
-    background: #43BAB6;
+    background: rgb(140, 210, 255);
     height: 38px;
     margin-bottom: 0;
+    text-align: center;
+    padding-top: 4px !important;
 }
 
 .form-horizontal .control-label {

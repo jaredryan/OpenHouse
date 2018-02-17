@@ -9,6 +9,20 @@ class ReportsController < ApplicationController
     
     def new
     end
+    
+    def open
+        if not logged_in?
+            flash[:notice] = "You must login to submit a report."
+        else
+            flash[:clicked] = true
+        end
+        redirect_to root_path
+    end
+    
+    def close
+        flash[:clicked] = nil
+        redirect_to root_path
+    end
 
     def create
         
@@ -17,9 +31,10 @@ class ReportsController < ApplicationController
         @boat_ramp = params[:boatRamp]
         @general = params[:text]
         
-        
+        flash[:clicked] = nil
         # Put data into database
         
+        flash[:notice] = "Thank you for your submission!"
     
         # @report = Report.create(params)
         redirect_to root_path
@@ -39,6 +54,7 @@ class ReportsController < ApplicationController
         
     
         # @report = Report.create(params)
+        flash[:notice] = "Thank you for your submission!"
         redirect_to root_path
     end
     
@@ -56,6 +72,7 @@ class ReportsController < ApplicationController
         
     
         # @report = Report.create(params)
+        flash[:notice] = "Thank you for your submission!"
         redirect_to root_path
     end
     
@@ -73,6 +90,7 @@ class ReportsController < ApplicationController
         
     
         # @report = Report.create(params)
+        flash[:notice] = "Thank you for your submission!"
         redirect_to root_path
     end
 end

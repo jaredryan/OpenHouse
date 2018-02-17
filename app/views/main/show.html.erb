@@ -13,63 +13,74 @@
     <% if flash[:notice] %>
 			<h6 id="flash"><%= flash[:notice]%></h6>
 		<% end %>
-    <div class="subBanner">
+    <div class="subBanner" style="height:120px">
     <center> 
       <%= form_for(:search, url: search_path) do |f| %>
         <table cellpadding="5">
           <tr>
             <td> <%= text_field_tag :water, nil, class: "form-control", size: "30", maxlength: "30", placeholder:"Lake/River Search" %> </td>
             <td> <%= text_field_tag :zip, nil, class: "form-control", size: "10", maxlength: "5", placeholder:"Zip Code" %> </td>
-            <td> <button type="submit" class="btn btn-dark"> Find </button> </td>
           </tr>
         </table>
+        <button type="submit" class="btn btn-dark" style="margin-top:10px"> Get Latest Updates </button>
       <% end %>
   
     </center>
     </div>
-    <%= form_for(:report, url: reports_path) do |f| %>
-    <table class="table">
-      <thead>
-          <tr>
-            <th scope="col">Boat Traffic</th>
-            <th scope="col">Beach Crowd</th>
-            <th scope="col">Boat-Ramp Traffic</th>
-          </tr>
-        </thead> 
-        <tbody>
-          <tr> 
-            <td> 
-            <!--radio_button_tag-->
-              <input type="radio" name="boatTraffic" value="mild"> mild </input>
-              <br /> 
-              <input type="radio" name="boatTraffic" value="medium"> medium </input>
-              <br />
-              <input type="radio" name="boatTraffic" value="heavy"> heavy </input>
-            </td> 
-            <td > 
-            <input type="radio" name="beachCrowd" value="mild"> mild  </input>
-            <br />
-            <input type="radio" name="beachCrowd" value="medium"> medium </input>
-            <br />
-            <input type="radio" name="beachCrowd" value="heavy"> heavy </input>
-          </td>
-           <td > 
-            <input type="radio" name="boatRamp" value="mild"> mild </input>
-            <br />
-            <input type="radio" name="boatRamp" value="medium"> medium </input>
-            <br />
-            <input type="radio" name="boatRamp" value="heavy"> heavy </input>
-          </td>
-          </tr>
-        </tbody>
-    </table>
-    <textarea class="form-control" placeholder="Record Observations" name="text" data-min-length=""></textarea>
-      <div class="bottomBanner">
-        <center> 
-        <button class="btn btn-dark" type="reset"> Clear </button> 
-        <button type="submit" class="btn btn-dark"> Submit </button>
-        </center>
+
+    <% if flash[:clicked] === nil %>
+      <div id="formBanner" class="formBanner">
+          <a href='/reports/open'>
+            <button type="submit" class="btn btn-dark" id="openForm">Submit Quick Report</button>
+          </a>
       </div>
+		<% else %>
+      <%= form_for :report, url: reports_path, html: {id: "generalForm"} do |f| %>
+      <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Boat Traffic</th>
+              <th scope="col">Beach Crowd</th>
+              <th scope="col">Boat-Ramp Traffic</th>
+            </tr>
+          </thead> 
+          <tbody>
+            <tr> 
+              <td> 
+              <!--radio_button_tag-->
+                <input type="radio" name="boatTraffic" value="mild"> mild </input>
+                <br /> 
+                <input type="radio" name="boatTraffic" value="medium"> medium </input>
+                <br />
+                <input type="radio" name="boatTraffic" value="heavy"> heavy </input>
+              </td> 
+              <td > 
+              <input type="radio" name="beachCrowd" value="mild"> mild  </input>
+              <br />
+              <input type="radio" name="beachCrowd" value="medium"> medium </input>
+              <br />
+              <input type="radio" name="beachCrowd" value="heavy"> heavy </input>
+            </td>
+             <td > 
+              <input type="radio" name="boatRamp" value="mild"> mild </input>
+              <br />
+              <input type="radio" name="boatRamp" value="medium"> medium </input>
+              <br />
+              <input type="radio" name="boatRamp" value="heavy"> heavy </input>
+            </td>
+            </tr>
+          </tbody>
+      </table>
+      <textarea class="form-control" placeholder="Record Observations" name="text" data-min-length=""></textarea>
+        <div class="bottomBanner">
+          <center> 
+          <a href='/reports/close'>
+            <button class="btn btn-dark" type="reset"> Clear </button> 
+          </a>
+          <button type="submit" class="btn btn-dark"> Submit </button>
+          </center>
+        </div>
+      <% end %>
     <% end %>
 
     <div class="liveFeed">
