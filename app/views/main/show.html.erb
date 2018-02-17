@@ -36,6 +36,15 @@
       </div>
 		<% else %>
       <%= form_for :report, url: reports_path, html: {id: "generalForm"} do |f| %>
+      <div class="surveyBanner">
+        <h3>Survey</h3>
+      </div>
+      <table cellpadding="5" id="lakeZipInput">
+        <tr>
+          <td> <%= text_field_tag :water, nil, class: "form-control", size: "30", maxlength: "30", placeholder:"Lake/River Name" %> </td>
+          <td> <%= text_field_tag :zip, nil, class: "form-control", size: "10", maxlength: "5", placeholder:"Zip Code" %> </td>
+        </tr>
+      </table>
       <table class="table">
         <thead>
             <tr>

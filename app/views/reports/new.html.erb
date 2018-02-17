@@ -16,12 +16,24 @@
 
     <%= form_for(:report, url: env_reports_path) do |f| %>
     
+    
     <div class="container">
+      <fieldset >
+        <legend>Freshwater Information</legend>
+        <h4 id="mandatory">(Mandatory for all survey types)</h4>
+      <table cellpadding="5" id="lakeZipInput" >
+        <tr>
+          <td> <%= text_field_tag :water, nil, class: "form-control", size: "30", maxlength: "30", placeholder:"Lake/River Name", style: "margin-right:2.5px"%> </td>
+          <td> <%= text_field_tag :zip, nil, class: "form-control", size: "10", maxlength: "5", placeholder:"Zip Code", style: "margin-left:2.5px"%> </td>
+        </tr>
+      </table>
+      <br>
+      </fieldset>
         	<form class="form-horizontal">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Environmental Conditions</legend>
+<legend style:"margin-top:20px">Environmental Conditions</legend>
 </div>
 <br>
 <div class="container">
@@ -72,10 +84,11 @@
     <div id="middleButtons" class="container">
         <div class="text-center">
             <button class="btn btn-dark" id="submitButton" type="submit">Submit</button>
-            <button class="btn btn-dark" id="Clear" type="submit">Clear Form</button>
+            <button class="btn btn-dark" id="Clear" type="reset">Clear Form</button>
         </div>
     </div>
     <% end %>
+</fieldset>
     
     <%= form_for(:report, url: bio_reports_path) do |f| %>
     
@@ -198,7 +211,7 @@
             <div class="container">
                 <div class="text-center">
                     <button class="btn btn-dark" type="submit">Submit</button>
-                    <button class="btn btn-dark" type="submit">Clear Form</button>
+                    <button class="btn btn-dark" type="reset">Clear Form</button>
                         <!--</form>-->
                 </div>
             </div>
@@ -347,7 +360,7 @@
                 <div class="text-center">
                   <br>
                     <button class="btn btn-dark" type="submit">Submit</button>
-                    <button class="btn btn-dark" type="submit">Clear Form</button>
+                    <button class="btn btn-dark" type="reset">Clear Form</button>
                         <!--</form>-->
                     <br>
                     <br>

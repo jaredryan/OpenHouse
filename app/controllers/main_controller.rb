@@ -19,6 +19,9 @@ class MainController < ApplicationController
         endpoint = "http://www.freshwaterapi.com/api/freshwater/getlakesbyzip/"
         # @response = HTTParty.get(endpoint + @zip)
         
+        # If valid, display responses if valid
+        # Else, flash[:notice] = "Your input did not find a match in the database."
+        
         # Below redirect currently refreshes the page
         redirect_to root_path
     end
