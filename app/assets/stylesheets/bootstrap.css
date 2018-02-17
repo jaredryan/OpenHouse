@@ -117,19 +117,6 @@ body {
     border-bottom: 1px solid #343a40;
 }
 
-#mandatory {
-  text-align: center;
-  margin: auto;
-  width: 100%;
-  background-color: rgba(12, 200, 255, 0.16);
-  margin-bottom: 20px;
-  margin-top: -22px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  color: black;
-  border-top: 0.5px solid rgba(145, 213, 208, .8);
-}
-
 .surveyBanner{
     height: 50px;
     color: #343a40;
