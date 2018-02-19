@@ -32,7 +32,7 @@ class ReportsController < ApplicationController
         @zip = params[:zipPost]
         @lake = params[:waterPost]
         
-        if @lake === ""
+        if @lake == ""
             flash[:notice] = "Please enter a lake name."
             redirect_to root_path
             return
@@ -100,8 +100,8 @@ class ReportsController < ApplicationController
         @zip = params[:zip]
         @lake = params[:water]
         
-        if @zip === "" && @lake === ""
-            flash[:notice] = "Please enter a lake name or a zip code."
+        if @lake == ""
+            flash[:notice] = "Please enter a lake name."
             redirect_to new_report_path
             return
         end
@@ -117,7 +117,7 @@ class ReportsController < ApplicationController
         # Put data into database
         
     
-        # byebug
+        
         
         # @report = Report.create(params)
         flash[:notice] = "Thank you for your submission!"
@@ -129,8 +129,8 @@ class ReportsController < ApplicationController
         @zip = params[:zip]
         @lake = params[:water]
         
-        if @zip === "" && @lake === ""
-            flash[:notice] = "Please enter a lake name or a zip code."
+        if @lake == ""
+            flash[:notice] = "Please enter a lake name."
             redirect_to new_report_path
             return
         end
@@ -156,8 +156,8 @@ class ReportsController < ApplicationController
         @zip = params[:zip]
         @lake = params[:water]
         
-        if @zip === "" && @lake === ""
-            flash[:notice] = "Please enter a lake name or a zip code."
+        if @lake == ""
+            flash[:notice] = "Please enter a lake name."
             redirect_to new_report_path
             return
         end
@@ -176,5 +176,32 @@ class ReportsController < ApplicationController
         # @report = Report.create(params)
         flash[:notice] = "Thank you for your submission!"
         redirect_to root_path
+    end
+    
+    def open_env
+        if not logged_in?
+            flash[:notice] = "You must login to submit a report."
+        else
+            flash[:env] = true
+        end
+        redirect_to new_report_path
+    end
+    
+    def open_bio
+        if not logged_in?
+            flash[:notice] = "You must login to submit a report."
+        else
+            flash[:bio] = true
+        end
+        redirect_to new_report_path
+    end
+    
+    def open_soc
+        if not logged_in?
+            flash[:notice] = "You must login to submit a report."
+        else
+            flash[:soc] = true
+        end
+        redirect_to new_report_path
     end
 end

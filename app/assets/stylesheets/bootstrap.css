@@ -285,6 +285,15 @@ table th, table td {
   width: 33.33%;
 }
 
+.reportBox {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    color: white;
+}
+
 @media only screen and (max-width: 650px) {
 	nav ul {
 	  left: 200px;

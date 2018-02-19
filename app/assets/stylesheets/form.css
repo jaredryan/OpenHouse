@@ -26,19 +26,18 @@
     color: white !important;
 }
 
-#flashReport {
-    font-size: 1em;
-    text-align: center;
-    margin-top: -20px;
-}
-
-
 #btn:hover {
     cursor: pointer;
 }
 
 #imageUpload:hover {
     cursor: pointer;
+}
+
+#flashReport {
+    font-size: 1em;
+    text-align: center;
+    margin-top: -20px;
 }
 
 legend {

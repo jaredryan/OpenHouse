@@ -4,11 +4,24 @@
 </head>
 
 <body>
-
+		
     <div class="container">
         <div class="jumbotron" id="no-border"></div>
     </div>
 
+    <% if flash[:notice] %>
+			<h6 id="flashReport"><%= flash[:notice]%></h6>
+		<% end %>
+
+    <% if flash[:env] === nil %>
+      <div class="container">
+        <div id="formBanner" class="formBanner reportBox">
+            <a href='/reports/open/env'>
+              <button type="submit" class="btn btn-dark" id="openForm">Submit Environmental Report</button>
+            </a>
+        </div>
+      </div>
+		<% else %>
     <%= form_for(:report, url: env_reports_path) do |f| %>
     
     <% if flash[:notice] %>
@@ -18,7 +31,7 @@
     <div class="container">
       <fieldset >
         <legend>Freshwater Information</legend>
-        <h4 id="mandatory">(Mandatory for all survey types)</h4>
+        <h4 id="mandatory">(Mandatory)</h4>
       <table cellpadding="5" id="lakeZipInput" >
         <tr>
           <td> <%= text_field_tag :water, nil, class: "form-control", size: "30", maxlength: "30", placeholder:"Lake/River Name", style: "margin-right:2.5px"%> </td>
@@ -28,6 +41,7 @@
       <br>
       </fieldset>
         	<form class="form-horizontal">
+
 <fieldset>
 
 <!-- Form Name -->
@@ -87,13 +101,34 @@
     </div>
     <% end %>
 </fieldset>
-    
+    <% end %>
     <%= form_for(:report, url: bio_reports_path) do |f| %>
     
     <br>
     
+    <% if flash[:bio] === nil %>
+    <div class="container">
+      <div id="formBanner" class="formBanner reportBox">
+          <a href='/reports/open/bio'>
+            <button type="submit" class="btn btn-dark" id="openForm">Submit Biology Report</button>
+          </a>
+      </div>
+    </div>
+		<% else %>
+    
     <div class="container">
         <form class="form-horizontal">
+          <fieldset >
+        <legend>Freshwater Information</legend>
+        <h4 id="mandatory">(Mandatory)</h4>
+      <table cellpadding="5" id="lakeZipInput" >
+        <tr>
+          <td> <%= text_field_tag :water, nil, class: "form-control", size: "30", maxlength: "30", placeholder:"Lake/River Name", style: "margin-right:2.5px"%> </td>
+          <td> <%= text_field_tag :zip, nil, class: "form-control", size: "10", maxlength: "5", placeholder:"Zip Code", style: "margin-left:2.5px"%> </td>
+        </tr>
+      </table>
+      <br>
+      </fieldset>
 <fieldset>
 
 <!-- Form Name -->
@@ -103,7 +138,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="windSpeed">Wind Speed</label>  
   <div class="col-md-2">
-  <input id="windSpeed" name="windSpeed" type="text" placeholder="66° F" class="form-control input-md">
+  <input id="windSpeed" name="windSpeed" type="text" placeholder="5 mph" class="form-control input-md">
     
   </div>
 </div>
@@ -200,7 +235,7 @@
 </div>
 
 </fieldset>
-</form>
+
 </div>
     </div>
 
@@ -210,18 +245,39 @@
                 <div class="text-center">
                     <button class="btn btn-dark" type="submit">Submit</button>
                     <button class="btn btn-dark" type="reset">Clear Form</button>
-                        <!--</form>-->
+                        </form>
                 </div>
             </div>
+    <% end %>
     <br>
     <% end %>
     
-
     
+
+    <% if flash[:soc] === nil %>
+    <div class="container">
+      <div id="formBanner" class="formBanner reportBox">
+          <a href='/reports/open/soc'>
+            <button type="submit" class="btn btn-dark" id="openForm">Submit Social Conditions Report</button>
+          </a>
+      </div>
+    </div>
+		<% else %>
     <%= form_for(:report, url: soc_reports_path) do |f| %>
     
     <div class="container">
          <form class="form-horizontal">
+           <fieldset >
+        <legend>Freshwater Information</legend>
+        <h4 id="mandatory">(Mandatory)</h4>
+      <table cellpadding="5" id="lakeZipInput" >
+        <tr>
+          <td> <%= text_field_tag :water, nil, class: "form-control", size: "30", maxlength: "30", placeholder:"Lake/River Name", style: "margin-right:2.5px"%> </td>
+          <td> <%= text_field_tag :zip, nil, class: "form-control", size: "10", maxlength: "5", placeholder:"Zip Code", style: "margin-left:2.5px"%> </td>
+        </tr>
+      </table>
+      <br>
+      </fieldset>
 <fieldset>
 
 <!-- Form Name -->
@@ -351,7 +407,7 @@
   </div>
 </div>
 </fieldset>
-</form>
+
 
     </div>
             <div class="container">
@@ -359,12 +415,13 @@
                   <br>
                     <button class="btn btn-dark" type="submit">Submit</button>
                     <button class="btn btn-dark" type="reset">Clear Form</button>
-                        <!--</form>-->
+                        </form>
                     <br>
                     <br>
                 </div>
             </div>
     
+    <% end %>
     <% end %>
     
     <script src="http://code.jquery.com/jquery-3.3.1.js " integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin=" anonymous "></script>
