@@ -22,6 +22,25 @@
     border-radius: 0px;
 }
 
+.btn-dark:hover {
+    color: white !important;
+}
+
+#flashReport {
+    font-size: 1em;
+    text-align: center;
+    margin-top: -20px;
+}
+
+
+#btn:hover {
+    cursor: pointer;
+}
+
+#imageUpload:hover {
+    cursor: pointer;
+}
+
 legend {
     background: rgb(140, 210, 255);
     height: 38px;

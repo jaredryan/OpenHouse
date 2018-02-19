@@ -35,8 +35,8 @@
       </div>
       <table cellpadding="5" id="lakeZipInput">
         <tr>
-          <td> <%= text_field_tag :water, nil, class: "form-control", size: "30", maxlength: "30", placeholder:"Lake/River Name" %> </td>
-          <td> <%= text_field_tag :zip, nil, class: "form-control", size: "10", maxlength: "5", placeholder:"Zip Code" %> </td>
+          <td> <%= text_field_tag :waterPost, nil, class: "form-control", size: "30", maxlength: "30", placeholder:"Lake/River Name" %> </td>
+          <td> <%= text_field_tag :zipPost, nil, class: "form-control", size: "10", maxlength: "5", placeholder:"Zip Code" %> </td>
         </tr>
       </table>
       <table class="table">
@@ -86,20 +86,48 @@
       <% end %>
     <% end %>
     
+
+
     <% if flash[:searched] %>
       <div class="liveFeed">
+        <% if session[:results] != nil %> 
         <h3 id="searchHeader">Search Results:</h3>
+        
         <div class="listOfPosts">
-          <div class="post">
-            <div id="title">
-              <h5 id="info">SUPER LONG LAKE NAME YESSS Lake, Zip Code</h4>
-              <h5 id="username">Username</h4>
+          <% session[:results].each do |result| %>
+            <div class="post">
+              <div id="title">
+                <h5 id="info"><%= result["name"] %>, <%= result["zip_code"] %></h4>
+                <h5 id="username"><%= result["username"] %></h4>
+              </div>
+              <div id=comment>
+                <% if result["general"] === [] %> 
+                  <p>No reports.</p>
+                <% else %>
+                  <% result["general"].each do |comment| %>
+                    <p><%= comment %></p>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
-            <div id=comment>
-              <p>You can do anything your heart can imagine. There it is. You don't want to kill all your dark areas they are very important. Let all these little things happen. Don't fight them. Learn to use them.</p>
-            </div>
-          </div>
+          <% end %>
+        <% else %>
+          <h3 id="searchHeader">No Results Found.</h3>
+        <% end %>
         </div>
+        
+        
+        <!--<div class="listOfPosts">-->
+        <!--  <div class="post">-->
+        <!--    <div id="title">-->
+        <!--      <h5 id="info">SUPER LONG LAKE NAME YESSS Lake, Zip Code</h4>-->
+        <!--      <h5 id="username">Username</h4>-->
+        <!--    </div>-->
+        <!--    <div id=comment>-->
+        <!--      <p>You can do anything your heart can imagine. There it is. You don't want to kill all your dark areas they are very important. Let all these little things happen. Don't fight them. Learn to use them.</p>-->
+        <!--    </div>-->
+        <!--  </div>-->
+        <!--</div>-->
         
         
   <!--        <p>You can do anything your heart can imagine. There it is. You don't want to kill all your dark areas they are very important. Let all these little things happen. Don't fight them. Learn to use them.<br><br>-->

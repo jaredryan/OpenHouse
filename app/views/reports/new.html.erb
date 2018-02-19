@@ -11,6 +11,9 @@
 
     <%= form_for(:report, url: env_reports_path) do |f| %>
     
+    <% if flash[:notice] %>
+			<h6 id="flashReport"><%= flash[:notice]%></h6>
+		<% end %>
     
     <div class="container">
       <fieldset >
